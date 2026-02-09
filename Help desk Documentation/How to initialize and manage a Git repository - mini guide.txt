@@ -1,0 +1,49 @@
+GETTING STARTED USING GIT VERSION CONTROL
+
+
+When you have a base project that you would like to commit to github for version control, first open either the application you use to code (vscode, jetbrains, etc. as long as it has a terminal) or open a PowerShell and navigate to the root folder of your project before attempting to run any 'git' commands.
+
+                      C:/Users/.../Projects/your-project-name      or      ~/Projects/your-    
+
+In order to make a new repository in your github run:
+
+             //this will initialize local Git repo
+
+                     git init
+
+After researching how and installing git and installing VS Code or Jetbrains, or whatever you like (personally I recommend  VSCode) there are still a couple of obscure tasks you must complete before git will allow you to push your repo. The first and last of which: you must provide Git with some additional config, namely it needs your Git username and email and the following is how to do just that.
+
+                 
+
+                //This will establish your Git email and Git username within the config files within your repo since you initialized git here
+
+                              git config --global user.email "you@example.com"
+                              git config --global user.name "Your Name"
+
+                   
+
+             //this will add the files from your current directory to git ( the ' . ' is needed to iterate through all children within the root folder)
+
+                     git add .
+
+             //this creates your first [branch] which you will use to push your repository to Git
+
+                     git commit -m "Initial commit"
+
+            //this will display which branch that you are on (master, main, ...) if nothing is returned,                         something is not right and you should back up. 
+
+                           git branch
+
+             //If you see main or master then you are good to go and ready to proceed!
+
+             //you can rename your branch with the following
+
+                           git branch <M branch-name(or main)>
+
+                          Exmpl: git branch -M main //changes branch name to main
+
+              //now to actually get your files to Github you need to use the [push] command using the -u switch (short for --set-upstream) option tells Git to link your local branch to the remote branch (Git repo) you're pushing to 
+
+                            git push -u origin main 
+
+                 and just like that you should have a new Git repository that contains your project files and every time you push your project, Git will make a sort of save point or a series of save points within your project that allow you to travel back to any previous 'push' or 'commit'. This is the power of version control. Good luck!    
